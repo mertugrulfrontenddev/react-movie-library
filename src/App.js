@@ -1,0 +1,26 @@
+import { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import "./App.css";
+import NavbarCinema from "./components/NavbarCinema";
+import FavoriteMovies from "./components/FavoriteMovies";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Home } from "./components/Home";
+import Movies from "./components/Movies";
+
+function App() {
+  return (
+    <BrowserRouter>
+      <NavbarCinema />
+      <div className=" container content-area flex-grow-1  p-1 w-75">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/favorite" element={<FavoriteMovies />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
+  );
+}
+
+export default App;
