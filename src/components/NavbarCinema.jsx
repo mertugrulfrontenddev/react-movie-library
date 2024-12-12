@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 const NavbarCinema = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Yan menü durumu
   const [isMenuOpen, setIsMenuOpen] = useState(false); // Üst menü durumu
 
-  // Yan menüyü açma/kapama
+  const menuRef = useRef(null); // Üst menü referansı
+
+  // Menü dışında tıklamayı algılayan fonksiyon
+
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
@@ -13,6 +16,21 @@ const NavbarCinema = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+  const handleOutsideClick = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      setIsMenuOpen(false); // Menü kapansın
+    }
+  };
+
+  // DOM'a tıklama olayını ekle
+  useEffect(() => {
+    document.addEventListener("mousedown", handleOutsideClick); // Mouse tıklamalarını dinle
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick); // Unmount sırasında temizle
+    };
+  }, []);
+
+  // Yan menüyü açma/kapama
 
   return (
     <>
@@ -50,7 +68,7 @@ const NavbarCinema = () => {
       </div>
 
       {/* Üst Menü */}
-      <div className={`top-menu ${isMenuOpen ? "open" : ""}`}>
+      <div className={`top-menu ${isMenuOpen ? "open" : ""}`} ref={menuRef}>
         {/* Üst menü ok işareti */}
 
         <div
