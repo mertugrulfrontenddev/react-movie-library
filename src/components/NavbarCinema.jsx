@@ -58,9 +58,9 @@ const NavbarCinema = () => {
           onClick={toggleMenu}
         >
           <button className="btn custom-hamburger-close">
-            <span className="sidebar-arrow-icon ">{` ${
-              isMenuOpen ? "↑" : "↓"
-            }`}</span>
+            <span className="sidebar-arrow-icon ">
+              {isMenuOpen ? "↑" : "↓"}
+            </span>
           </button>
         </div>
 
