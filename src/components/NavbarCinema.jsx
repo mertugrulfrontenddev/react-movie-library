@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 const NavbarCinema = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true); // Yan menü durumu
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Yan menü durumu
   const [isMenuOpen, setIsMenuOpen] = useState(false); // Üst menü durumu
 
   // Yan menüyü açma/kapama
