@@ -1,7 +1,11 @@
+import { useContext, useEffect } from "react";
+import { CinemaApiContext } from "../context/CinemaContext";
+import MovieItem from "./MovieItem";
+
 const Movies = () => {
   return (
-    <div className="card">
-      <div className="card-body">burası moviler olacak</div>
+    <div className="container">
+      <MovieItem />
     </div>
   );
 };

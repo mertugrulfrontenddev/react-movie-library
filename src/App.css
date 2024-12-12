@@ -71,7 +71,9 @@
 
   .top-menu {
     display: block;
-
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     /* Mobilde üst menü görünür */
   }
 
@@ -124,7 +126,7 @@
   }
 
   .content-area {
-    margin-top: 75px !important;
+    margin-top: 0 !important;
   }
 }
 

@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "title": "Inception",
+    "year": 2010,
+    "genre": "Science Fiction",
+    "director": "Christopher Nolan",
+    "poster": "https://cdn.wannart.com/production/post/2019/04/inception-wannagate.jpg",
+    "isFavorite": false
+  },
+  {
+    "id": 2,
+    "title": "The Dark Knight",
+    "year": 2008,
+    "genre": "Action",
+    "director": "Christopher Nolan",
+    "poster": "https://www.hollywoodreporter.com/wp-content/uploads/2024/04/Dark-Knight-Rises-everett-H-2024.jpg?w=1296&h=730&crop=1&resize=681%2C383",
+    "isFavorite": false
+  },
+  {
+    "id": 3,
+    "title": "Breaking Bad",
+    "year": 2008,
+    "genre": "Drama",
+    "director": "Vince Gilligan",
+    "poster": "https://22dakika.org/wp-content/uploads/2015/06/breaking5.jpg",
+    "isFavorite": false
+  },
+  {
+    "id": 4,
+    "title": "The Matrix",
+    "year": 1999,
+    "genre": "Science Fiction",
+    "director": "The Wachowskis",
+    "poster": "https://www.syfy.com/sites/syfy/files/styles/hero_image__large__computer__alt/public/2021/03/the-matrix.jpeg",
+    "isFavorite": false
+  },
+  {
+    "id": 5,
+    "title": "Game of Thrones",
+    "year": 2011,
+    "genre": "Fantasy",
+    "director": "David Benioff & D. B. Weiss",
+    "poster": "https://vesaire.org/wp-content/uploads/2016/04/got.jpg",
+    "isFavorite": false
+  }
+]
