@@ -13,7 +13,7 @@ const MovieItem = () => {
         {movieItems && movieItems.length > 0 ? (
           movieItems.map((movie) => (
             <div className="col-md-4 ">
-              <div className="card mb-4 " key={movie.id}>
+              <div className="card mb-4 shadow" key={movie.id}>
                 <div className="card-body d-flex flex-column justify-content-center align-items-center shadow-sm">
                   <FavoriteIcon
                     movieId={movie.id}

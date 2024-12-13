@@ -30,7 +30,7 @@ const FavoriteMovies = () => {
                     : "col-md-4"
                 }
               >
-                <div className="card">
+                <div className="card shadow">
                   <div className="card-body d-flex flex-column justify-content-center align-items-center">
                     <img
                       src={movie.poster}
