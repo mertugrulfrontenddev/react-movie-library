@@ -20,7 +20,7 @@ const FavoriteMovies = () => {
                   src="/images/empty_star.png"
                   alt=""
                 />
-                <p className="badge bg-warning fw-bold fs-5 w-50 d-block mx-auto p-3">
+                <p className="badge bg-warning fw-bold fs-5 w-50 d-block mx-auto p-4">
                   You don't have favorite movie yet...
                 </p>
               </div>
