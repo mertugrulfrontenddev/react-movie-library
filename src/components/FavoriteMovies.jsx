@@ -35,7 +35,7 @@ const FavoriteMovies = () => {
                     <img
                       src={movie.poster}
                       alt=""
-                      className="img-movie w-100 mb-2"
+                      className="img-movie w-100 mb-2 shadow"
                     />
                     <h3 className="text-secondary">{movie.title}</h3>
                     <span className="fw-bold badge bg-danger me-1 p-3 mt-1 w-100">

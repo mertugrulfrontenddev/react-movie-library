@@ -20,7 +20,7 @@ const MovieItem = () => {
                     movieIsFavorite={movie.isFavorite}
                   />
                   <img
-                    className="img-movie w-100 mb-2"
+                    className="img-movie w-100 mb-2 shadow"
                     src={movie.poster}
                     alt={movie.title}
                   />
