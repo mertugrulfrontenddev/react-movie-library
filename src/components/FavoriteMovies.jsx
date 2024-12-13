@@ -6,14 +6,14 @@ const FavoriteMovies = () => {
   let { movieItems } = useContext(CinemaApiContext);
 
   return (
-    <div className="container-fluid">
-      <h2 className="shadow p-3 mt-5 text-white bg-danger w-100 d-block">
+    <div className="container d-flex flex-row flex-wrap align-items-center justfiy-content-between mt-4">
+      <h2 className="shadow p-3 mt-5 text-white bg-danger w-100 d-block ">
         Your Favorite Movies List
       </h2>
-      <div className="row mx-auto">
+      <div className="row flex-grow-1  mt-4 ">
         {movieItems.filter((movie) => movie.isFavorite).length === 0 ? (
-          <div className="col-md-4 w-100">
-            <div className="card">
+          <div className="col-md-4 w-100 ">
+            <div className="card ">
               <div className="card-body text-center d-flex flex-column  align-items-center">
                 <img className="img-movie mb-3" src="/images/mind.png" alt="" />
                 <p className="badge bg-warning fw-bold   mx-auto p-3">
@@ -33,7 +33,7 @@ const FavoriteMovies = () => {
                     : "col-md-4"
                 }
               >
-                <div className="card shadow">
+                <div className="card shadow mb-4">
                   <div className="card-body d-flex flex-column justify-content-center align-items-center">
                     <img
                       src={movie.poster}

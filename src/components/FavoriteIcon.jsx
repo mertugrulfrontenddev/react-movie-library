@@ -3,7 +3,7 @@ import { CinemaApiContext } from "../context/CinemaContext";
 
 import "../App.css";
 
-const FavoriteIcon = ({ movieId, movieIsFavorite }) => {
+const FavoriteIcon = ({ movieId, movieIsFavorite, filtered, setFiltered }) => {
   let { movieItems, setMovieItems } = useContext(CinemaApiContext);
 
   let [isAnimate, setIsAnimate] = useState(false);
@@ -14,6 +14,11 @@ const FavoriteIcon = ({ movieId, movieIsFavorite }) => {
     );
 
     setMovieItems(updatedMovies);
+
+    const updatedFilteredMovies = filtered.map((movie) =>
+      movie.id === id ? { ...movie, isFavorite: !movie.isFavorite } : movie
+    );
+    setFiltered(updatedFilteredMovies);
 
     setIsAnimate(true);
     setTimeout(() => setIsAnimate(false), 300);
