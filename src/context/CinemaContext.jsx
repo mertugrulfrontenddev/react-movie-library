@@ -4,7 +4,9 @@ const CinemaApiContext = createContext();
 
 const ApiContextProvider = ({ children }) => {
   let [movieItems, setMovieItems] = useState([]);
-
+  function handleFavorite(event) {
+    console.log("favori icon tıklandı");
+  }
   useEffect(() => {
     fetch("/movies.json")
       .then((response) => response.json())
@@ -13,7 +15,9 @@ const ApiContextProvider = ({ children }) => {
   }, []);
 
   return (
-    <CinemaApiContext.Provider value={{ movieItems, setMovieItems }}>
+    <CinemaApiContext.Provider
+      value={{ movieItems, setMovieItems, handleFavorite }}
+    >
       {children}
     </CinemaApiContext.Provider>
   );

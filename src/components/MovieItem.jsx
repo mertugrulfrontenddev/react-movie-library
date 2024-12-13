@@ -1,5 +1,7 @@
 import { CinemaApiContext } from "../context/CinemaContext";
 import { useContext } from "react";
+import FavoriteIcon from "./FavoriteIcon";
+import "../App.css";
 const MovieItem = () => {
   let { movieItems } = useContext(CinemaApiContext);
 
@@ -13,25 +15,21 @@ const MovieItem = () => {
             <div className="col-md-4 ">
               <div className="card mb-4 " key={movie.id}>
                 <div className="card-body d-flex flex-column justify-content-center align-items-center shadow-sm">
+                  <FavoriteIcon
+                    movieId={movie.id}
+                    movieIsFavorite={movie.isFavorite}
+                  />
                   <img
-                    className="w-100 mb-2"
+                    className="img-movie w-100 mb-2"
                     src={movie.poster}
                     alt={movie.title}
-                    style={{
-                      minHeight: 230,
-                      minWidth: 230,
-                      maxHeight: 230,
-                      maxWidth: 230,
-                      objectFit: "cover",
-                      borderRadius: 3,
-                    }}
                   />
 
                   <h3 className="shadow-sm p-2 w-100 text-center text-secondary fw-bold">
                     {movie.title}
                   </h3>
 
-                  <span className="fw-bold badge bg-secondary me-1 p-3 mt-1 w-100">
+                  <span className="fw-bold badge bg-primary me-1 p-3 mt-1 w-100">
                     Director: {movie.director}
                   </span>
                 </div>

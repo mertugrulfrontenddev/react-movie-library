@@ -1,4 +1,5 @@
 /* Yan Menü */
+
 .sidebar {
   position: fixed;
   top: 0;
@@ -138,4 +139,28 @@
   .top-menu {
     display: none;
   }
+}
+
+/* favorite icon animation classes */
+
+.favorite-icon {
+  width: 24px;
+  height: 24px;
+  transform: rotate(220deg) scale(1); /* Hem döndür hem başlangıç boyutunda tut */
+  transition: all 0.7s ease-in-out; /* Animasyon süresi ve tipi */
+}
+
+.favorite-icon.animate {
+  transform: rotate(260deg) scale(1.2); /* Döndürmeyi koru ve %20 büyüt */
+}
+
+/* favorite icon animation classes */
+
+.img-movie {
+  min-height: 210px;
+  min-width: 210px;
+  max-height: 210px;
+  max-width: 210px;
+  object-fit: "cover";
+  border-radius: 3;
 }
