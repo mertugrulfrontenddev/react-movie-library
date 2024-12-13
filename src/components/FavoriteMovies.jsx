@@ -12,10 +12,17 @@ const FavoriteMovies = () => {
       </h2>
       <div className="row">
         {movieItems.filter((movie) => movie.isFavorite).length === 0 ? (
-          <div className="col-md-4">
+          <div className="col-md-4 w-100">
             <div className="card">
-              <div className="card-body">
-                <p>You don't have favorite movie yet...</p>
+              <div className="card-body text-center ">
+                <img
+                  className="img-movie mb-3"
+                  src="/images/empty_star.png"
+                  alt=""
+                />
+                <p className="badge bg-warning fw-bold fs-5 w-50 d-block mx-auto p-3">
+                  You don't have favorite movie yet...
+                </p>
               </div>
             </div>
           </div>
