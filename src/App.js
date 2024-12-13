@@ -12,7 +12,7 @@ function App() {
   return (
     <BrowserRouter>
       <NavbarCinema />
-      <div className="container content-area flex-grow-1  p-1 w-75">
+      <div className="container content-area   p-1 w-100">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/movies" element={<Movies />} />

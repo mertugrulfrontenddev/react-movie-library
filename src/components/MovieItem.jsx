@@ -5,10 +5,11 @@ import "../App.css";
 const MovieItem = () => {
   let { movieItems } = useContext(CinemaApiContext);
 
-  console.log(movieItems);
   return (
     <div className="container d-flex flex-row flex-wrap align-items-center justfiy-content-between mt-4 ">
-      <h2 className="shadow w-100 p-3 mt-5 text-secondary">Movies List</h2>
+      <h2 className="shadow w-100 p-3 mt-5 text-white bg-primary">
+        Movies List
+      </h2>
       <div className="row Gap-2 mt-4">
         {movieItems && movieItems.length > 0 ? (
           movieItems.map((movie) => (

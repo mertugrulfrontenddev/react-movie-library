@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 const NavbarCinema = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Yan menü durumu
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true); // Yan menü durumu
   const [isMenuOpen, setIsMenuOpen] = useState(false); // Üst menü durumu
 
   const menuRef = useRef(null); // Üst menü referansı
@@ -77,7 +77,7 @@ const NavbarCinema = () => {
         >
           <button className="btn custom-hamburger-close">
             <span className="sidebar-arrow-icon ">
-              {isMenuOpen ? "↑" : "↓"}
+              {isMenuOpen ? "✖" : "☰"}
             </span>
           </button>
         </div>

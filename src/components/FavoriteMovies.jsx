@@ -7,20 +7,16 @@ const FavoriteMovies = () => {
 
   return (
     <div className="container-fluid">
-      <h2 className="shadow w-100 p-3 mt-5 text-secondary">
+      <h2 className="shadow p-3 mt-5 text-white bg-danger w-100 d-block">
         Your Favorite Movies List
       </h2>
-      <div className="row">
+      <div className="row mx-auto">
         {movieItems.filter((movie) => movie.isFavorite).length === 0 ? (
           <div className="col-md-4 w-100">
             <div className="card">
-              <div className="card-body text-center ">
-                <img
-                  className="img-movie mb-3"
-                  src="/images/empty_star.png"
-                  alt=""
-                />
-                <p className="badge bg-warning fw-bold fs-5 w-50 d-block mx-auto p-4">
+              <div className="card-body text-center d-flex flex-column  align-items-center">
+                <img className="img-movie mb-3" src="/images/mind.png" alt="" />
+                <p className="badge bg-warning fw-bold   mx-auto p-3">
                   You don't have favorite movie yet...
                 </p>
               </div>
