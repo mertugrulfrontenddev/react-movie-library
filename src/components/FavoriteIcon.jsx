@@ -15,10 +15,12 @@ const FavoriteIcon = ({ movieId, movieIsFavorite, filtered, setFiltered }) => {
 
     setMovieItems(updatedMovies);
 
-    const updatedFilteredMovies = filtered.map((movie) =>
-      movie.id === id ? { ...movie, isFavorite: !movie.isFavorite } : movie
-    );
-    setFiltered(updatedFilteredMovies);
+    if (filtered && filtered.length) {
+      const updatedFilteredMovies = filtered.map((movie) =>
+        movie.id === id ? { ...movie, isFavorite: !movie.isFavorite } : movie
+      );
+      setFiltered(updatedFilteredMovies);
+    }
 
     setIsAnimate(true);
     setTimeout(() => setIsAnimate(false), 300);

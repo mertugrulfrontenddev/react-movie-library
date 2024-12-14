@@ -14,16 +14,16 @@ const MovieItem = () => {
   }
 
   function findSearched(value) {
-    let regex = new RegExp(value, "i");
-
-    let filteredMovies = movieItems.filter((movie) => regex.test(movie.title));
+    let filteredMovies = movieItems.filter((movie) =>
+      movie.title.toLowerCase().includes(value.toLowerCase())
+    );
 
     setFiltered(filteredMovies);
   }
 
   return (
     <div className="container d-flex flex-row flex-wrap align-items-center justfiy-content-between mt-4 ">
-      <div className="shadow w-100 p-3 mt-5 text-white bg-primary d-flex justify-content-between">
+      <div className="stiky shadow w-100 p-3 mt-5 text-white bg-primary d-flex justify-content-between">
         <h2>Movies List</h2>
         <div className="d-flex align-items-center justify-content-center">
           <span className="me-2 fw-bold">
@@ -34,7 +34,7 @@ const MovieItem = () => {
             id="inputFind"
             className="form-control w-75"
             placeholder="type movie..."
-            value={searched}
+            value={searched || ""}
             onChange={(event) => handleSearched(event)}
           ></input>
         </div>
@@ -43,8 +43,8 @@ const MovieItem = () => {
       <div className="row Gap-2 mt-4 flex-grow-1">
         {filtered.length > 0 ? (
           filtered.map((movie) => (
-            <div className="col-md-4" key={movie.id}>
-              <div className="card mb-4 shadow">
+            <div className="col-md-4 ">
+              <div className="card mb-4 shadow" key={movie.id}>
                 <div className="card-body d-flex flex-column justify-content-center align-items-center shadow-sm">
                   <FavoriteIcon
                     movieId={movie.id}
@@ -71,7 +71,7 @@ const MovieItem = () => {
           ))
         ) : movieItems && movieItems.length > 0 ? (
           movieItems.map((movie) => (
-            <div className="col-md-4" key={movie.id}>
+            <div className="col-md-4 ">
               <div className="card mb-4 shadow" key={movie.id}>
                 <div className="card-body d-flex flex-column justify-content-center align-items-center shadow-sm">
                   <FavoriteIcon

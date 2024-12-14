@@ -8,9 +8,16 @@
   height: 100vh;
   background-color: #303031f1;
   transition: left 0.3s ease;
-  z-index: 1000;
+  z-index: 1200;
   padding-top: 80px;
   border-radius: 7px;
+}
+
+.stiky {
+  position: sticky;
+  top: 0;
+
+  z-index: 1300;
 }
 
 .sidebar.open {
@@ -70,6 +77,12 @@
     display: none; /* Mobilde yan menü gizlenir */
   }
 
+  .stiky {
+    position: sticky;
+    top: 70px;
+
+    z-index: 1300;
+  }
   .sidebar-arrow.d-none {
     display: none; /* Ok işareti mobilde gizlenir */
   }
@@ -78,7 +91,7 @@
     display: block;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 1400;
     /* Mobilde üst menü görünür */
   }
 
