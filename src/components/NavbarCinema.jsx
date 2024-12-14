@@ -5,7 +5,7 @@ const NavbarCinema = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // Üst menü durumu
 
   const menuRef = useRef(null); // Üst menü referansı
-
+  const SideMenuRef = useRef(null); //yan menu referans
   // Menü dışında tıklamayı algılayan fonksiyon
 
   const toggleSidebar = () => {
@@ -20,11 +20,16 @@ const NavbarCinema = () => {
     if (menuRef.current && !menuRef.current.contains(event.target)) {
       setIsMenuOpen(false); // Menü kapansın
     }
+
+    if (SideMenuRef.current && !SideMenuRef.current.contains(event.target)) {
+      setIsSidebarOpen(false); // Menü kapansın
+    }
   };
 
   // DOM'a tıklama olayını ekle
   useEffect(() => {
     document.addEventListener("mousedown", handleOutsideClick); // Mouse tıklamalarını dinle
+
     return () => {
       document.removeEventListener("mousedown", handleOutsideClick); // Unmount sırasında temizle
     };
@@ -35,7 +40,10 @@ const NavbarCinema = () => {
   return (
     <>
       {/* Masaüstü: Yan Menü */}
-      <div className={`sidebar ${isSidebarOpen ? "open" : "close"}`}>
+      <div
+        className={`sidebar ${isSidebarOpen ? "open" : "close"}`}
+        ref={SideMenuRef}
+      >
         <div
           className={`sidebar-arrow ${isSidebarOpen ? "open" : ""}`}
           onClick={toggleSidebar}

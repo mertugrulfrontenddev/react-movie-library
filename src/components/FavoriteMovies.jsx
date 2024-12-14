@@ -7,7 +7,7 @@ const FavoriteMovies = () => {
 
   return (
     <div className="container d-flex flex-row flex-wrap align-items-center justfiy-content-between mt-4">
-      <h2 className="shadow p-3 mt-5 text-white bg-danger w-100 d-block ">
+      <h2 className="shadow p-3 mt-5 text-white bg-danger w-100 d-block  ">
         Your Favorite Movies List
       </h2>
       <div className="row flex-grow-1  mt-4 ">
