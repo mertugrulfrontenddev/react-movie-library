@@ -8,16 +8,9 @@
   height: 100vh;
   background-color: #303031f1;
   transition: left 0.3s ease;
-  z-index: 1200;
+  z-index: 1400;
   padding-top: 80px;
   border-radius: 7px;
-}
-
-.stiky {
-  position: sticky;
-  top: 0;
-
-  z-index: 1300;
 }
 
 .sidebar.open {
@@ -70,6 +63,13 @@
 
 .menu-content-desktop > ul > li > a.nav-link:hover {
   color: orange !important;
+}
+
+.stiky {
+  position: sticky;
+  top: 0;
+
+  z-index: 1300;
 }
 /* Mobildeki Menü */
 @media (max-width: 991px) {
