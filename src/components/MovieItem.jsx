@@ -78,6 +78,7 @@ const MovieItem = () => {
           <p>No movies available.</p>
         )}
       </div>
+      <div className="p-4 w-100 bg-primary mt-2"> </div>
     </div>
   );
 };

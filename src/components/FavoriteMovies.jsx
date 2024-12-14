@@ -34,7 +34,7 @@ const FavoriteMovies = () => {
                 }
               >
                 <div className="card shadow mb-4">
-                  <div className="card-body d-flex flex-column justify-content-center align-items-center">
+                  <div className="card-body d-flex flex-column justify-content-center align-items-center ">
                     <img
                       src={movie.poster}
                       alt=""
@@ -50,6 +50,8 @@ const FavoriteMovies = () => {
             ))
         )}
       </div>
+
+      <div className="p-4 w-100 bg-danger mt-2"> </div>
     </div>
   );
 };
