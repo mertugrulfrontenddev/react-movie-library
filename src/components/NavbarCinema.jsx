@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import SettingsDropdown from "./SettingDropDown";
 const NavbarCinema = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true); // Yan menü durumu
   const [isMenuOpen, setIsMenuOpen] = useState(false); // Üst menü durumu
@@ -66,11 +67,13 @@ const NavbarCinema = () => {
                 Movies
               </Link>
             </li>
+
             <li className="nav-item">
               <Link className="nav-link text-white" to="/favorite">
                 Favorite Movies
               </Link>
             </li>
+            <SettingsDropdown />
           </ul>
         </div>
       </div>
@@ -109,6 +112,7 @@ const NavbarCinema = () => {
                 Favorite Movies
               </Link>
             </li>
+            <SettingsDropdown />
           </ul>
         </div>
       </div>
