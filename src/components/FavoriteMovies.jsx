@@ -1,9 +1,17 @@
 import { CinemaApiContext } from "../context/CinemaContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import "../App.css";
 
 const FavoriteMovies = () => {
-  let { movieItems } = useContext(CinemaApiContext);
+  let { movieItems, setMovieItems } = useContext(CinemaApiContext);
+
+  useEffect(() => {
+    const storedMovies = JSON.parse(localStorage.getItem("items"));
+
+    if (storedMovies) {
+      setMovieItems(storedMovies);
+    }
+  }, []);
 
   return (
     <div className="container d-flex flex-row flex-wrap align-items-center justfiy-content-between mt-4">

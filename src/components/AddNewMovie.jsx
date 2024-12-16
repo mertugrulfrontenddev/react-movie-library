@@ -5,19 +5,27 @@ const AddNewMovie = () => {
   let { movieItems, setMovieItems } = useContext(CinemaApiContext);
 
   let [values, setValues] = useState({
+    id: "",
     title: "",
     genre: "",
     director: "",
     year: "",
     poster: "",
+    isFavorite: false,
   });
+
+  useEffect(() => {
+    localStorage.setItem("items", JSON.stringify(movieItems));
+  }, [movieItems]);
 
   let [isSuccess, setIsSuccess] = useState(false);
 
   function handleSubmit(event) {
     event.preventDefault();
 
-    setMovieItems((prevItems) => [...prevItems, values]);
+    const newMovie = { ...values, id: Date.now() + Math.random() };
+
+    setMovieItems((prevItems) => [...prevItems, newMovie]);
 
     setIsSuccess(true);
   }
@@ -49,7 +57,9 @@ const AddNewMovie = () => {
           >
             <h3 className="text-center text-secondary">Movie Add Page</h3>
 
-            {isSuccess && <p>Film Başarıyla Eklendi!!!</p>}
+            {isSuccess && (
+              <p className="badge bg-warning">Film Başarıyla Eklendi!!!</p>
+            )}
             <div className="w-100">
               <label
                 htmlFor="title"

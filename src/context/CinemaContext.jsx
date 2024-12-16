@@ -8,10 +8,16 @@ const ApiContextProvider = ({ children }) => {
     console.log("favori icon tıklandı");
   }
   useEffect(() => {
-    fetch("/movies.json")
-      .then((response) => response.json())
-      .then((data) => setMovieItems(data))
-      .catch((error) => console.error("Error", error));
+    const storedMovies = JSON.parse(localStorage.getItem("items"));
+
+    if (storedMovies && storedMovies.length > 0) {
+      setMovieItems(storedMovies);
+    } else {
+      fetch("/movies.json")
+        .then((response) => response.json())
+        .then((data) => setMovieItems(data))
+        .catch((error) => console.error("Error", error));
+    }
   }, []);
 
   return (
