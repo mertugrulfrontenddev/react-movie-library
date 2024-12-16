@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from "./components/Home";
 import Movies from "./components/Movies";
 import AddNewMovie from "./components/AddNewMovie";
+import DeleteMovie from "./components/DeleteMovie";
 function App() {
   return (
     <BrowserRouter>
@@ -18,6 +19,7 @@ function App() {
           <Route path="/favorite" element={<FavoriteMovies />} />
 
           <Route path="/movieadd" element={<AddNewMovie />} />
+          <Route path="/moviedelete" element={<DeleteMovie />} />
         </Routes>
       </div>
     </BrowserRouter>

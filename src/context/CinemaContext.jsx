@@ -8,15 +8,26 @@ const ApiContextProvider = ({ children }) => {
     console.log("favori icon tıklandı");
   }
   useEffect(() => {
-    const storedMovies = JSON.parse(localStorage.getItem("items"));
+    const storedMovies = localStorage.getItem("items");
 
-    if (storedMovies && storedMovies.length > 0) {
-      setMovieItems(storedMovies);
+    // Geçerli bir veri olup olmadığını kontrol et
+    if (storedMovies) {
+      try {
+        const parsedMovies = JSON.parse(storedMovies);
+
+        // Eğer JSON geçerli ve dizi varsa, movieItems'ı ayarla
+        if (parsedMovies && parsedMovies.length > 0) {
+          setMovieItems(parsedMovies);
+        } else {
+          // Eğer dizi boşsa, movieItems'ı boş bir diziye ata
+          setMovieItems([]);
+        }
+      } catch (e) {
+        console.error("Error parsing stored movies", e);
+        // JSON geçerli değilse, movieItems'ı boş bir diziye ata
+      }
     } else {
-      fetch("/movies.json")
-        .then((response) => response.json())
-        .then((data) => setMovieItems(data))
-        .catch((error) => console.error("Error", error));
+      // Eğer localStorage'da veri yoksa, movieItems'ı boş bir diziye ata
     }
   }, []);
 

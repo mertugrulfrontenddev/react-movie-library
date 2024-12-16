@@ -182,6 +182,15 @@
   border-radius: 3;
 }
 
+.img-delete-movie-icon {
+  min-height: 25px;
+  min-width: 25px;
+  max-height: 25px;
+  max-width: 25px;
+  object-fit: "cover";
+  border-radius: 3;
+}
+
 .detail-movie {
   position: absolute;
   top: -300px;

@@ -3,11 +3,13 @@ import { useContext, useState } from "react";
 import FavoriteIcon from "./FavoriteIcon";
 import "../App.css";
 import DetailMovie from "./DetailMovie";
+import { Link } from "react-router-dom";
 
 const MovieItem = () => {
   let { movieItems } = useContext(CinemaApiContext);
   let [searched, setSearched] = useState("");
   let [filtered, setFiltered] = useState([]);
+
   function handleSearched(event) {
     setSearched(event.target.value);
 
@@ -75,7 +77,18 @@ const MovieItem = () => {
             </div>
           ))
         ) : (
-          <p>No movies available.</p>
+          <div className="card w-50 mx-auto">
+            <div className="card-body">
+              <p>
+                No movies available. if You want You can go
+                <span>
+                  <Link className="nav-link text-primary" to="/movieadd">
+                    Add Movie Page Directly
+                  </Link>
+                </span>
+              </p>
+            </div>
+          </div>
         )}
       </div>
       <div className="p-4 w-100 bg-primary mt-2"> </div>

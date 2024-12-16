@@ -44,7 +44,7 @@ const SettingsDropdown = () => {
           <li className="nav-item">
             <Link
               className="nav-link text-white"
-              to="/delete"
+              to="/moviedelete"
               onClick={handleLinkClick}
             >
               Movie Delete
