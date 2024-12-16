@@ -6,6 +6,7 @@ const DeleteMovie = () => {
   let { movieItems, setMovieItems } = useContext(CinemaApiContext);
   let [hoveredMovieId, setHoveredMovieId] = useState(null);
 
+  movieItems = movieItems || [];
   // İlk render'da localStorage'dan veri alıyoruz.
   useEffect(() => {
     const savedMovies = JSON.parse(localStorage.getItem("items"));
@@ -33,8 +34,6 @@ const DeleteMovie = () => {
 
       // LocalStorage'ı hemen güncelleme işlemi
       localStorage.setItem("items", JSON.stringify(updatedMovies));
-
-      return updatedMovies;
     });
   }
 
@@ -56,16 +55,16 @@ const DeleteMovie = () => {
           <p className="text-start ms-1 p-2" style={{ flex: "1 1 1%" }}>
             Num
           </p>
-          <p className="text-start ms-3 p-2" style={{ flex: "1 1 15%" }}>
+          <p className="text-start ms-1 p-2" style={{ flex: "1 1 15%" }}>
             Title
           </p>
-          <p className="text-start ms-3 p-2" style={{ flex: "1 1 15%" }}>
+          <p className="text-start ms-1 p-2" style={{ flex: "1 1 15%" }}>
             Genre
           </p>
-          <p className="text-start ms-3 p-2" style={{ flex: "1 1 20%" }}>
+          <p className="text-start ms-1 p-2" style={{ flex: "1 1 20%" }}>
             Director
           </p>
-          <p className="text-start ms-3 p-2" style={{ flex: "1 1 15%" }}>
+          <p className="text-start ms-1 p-2" style={{ flex: "1 1 15%" }}>
             Year
           </p>
           <p className="text-start p-2" style={{ flex: "1 1 10%" }}>
@@ -79,7 +78,7 @@ const DeleteMovie = () => {
               className="d-flex justify-content-between align-items-start flex-wrap"
               key={movie.id}
             >
-              <p className="text-start ms-3 p-2 " style={{ flex: "1 1 1%" }}>
+              <p className="text-start ms-1 p-2 " style={{ flex: "1 1 1%" }}>
                 {index + 1}.
               </p>
               <p className="text-start ms-3 p-2 " style={{ flex: "1 1 15%" }}>
@@ -94,7 +93,7 @@ const DeleteMovie = () => {
               <p className="text-start ms-1 p-1" style={{ flex: "1 1 15%" }}>
                 {movie.year}
               </p>
-              <p className="text-start ms-3 p-2" style={{ flex: "1 1 10%" }}>
+              <p className="text-start ms-1 p-2" style={{ flex: "1 1 10%" }}>
                 <img
                   id={movie.id}
                   src={
