@@ -1,6 +1,6 @@
 import { CinemaApiContext } from "../context/CinemaContext";
 import { useContext, useEffect, useState } from "react";
-
+import { v4 as uuidv4 } from "uuid";
 const AddNewMovie = () => {
   let { movieItems, setMovieItems } = useContext(CinemaApiContext);
 
@@ -23,11 +23,21 @@ const AddNewMovie = () => {
   function handleSubmit(event) {
     event.preventDefault();
 
-    const newMovie = { ...values, id: Date.now() + Math.random() };
+    const newMovie = { ...values, id: uuidv4() };
 
     setMovieItems((prevItems) => [...prevItems, newMovie]);
 
     setIsSuccess(true);
+
+    setValues({
+      id: "",
+      title: "",
+      genre: "",
+      director: "",
+      year: "",
+      poster: "",
+      isFavorite: false,
+    });
   }
 
   let handleChange = (event) => {
@@ -84,15 +94,20 @@ const AddNewMovie = () => {
               >
                 Genre:
               </label>
-              <input
-                type="text"
+              <select
+                className="form-control"
                 id="genre"
                 name="genre"
                 value={values.genre}
-                className="form-control"
-                placeholder="Enter movie genre"
                 onChange={handleChange}
-              />
+              >
+                <option value="">Select Movie Type</option>
+                <option value="Action">Action</option>
+                <option value="Drama">Drama</option>
+                <option value="Comedi">Comedi</option>
+                <option value="War">War</option>
+                <option value="Other">Other</option>
+              </select>
             </div>
             <div className="w-100">
               <label

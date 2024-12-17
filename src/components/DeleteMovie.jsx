@@ -34,6 +34,7 @@ const DeleteMovie = () => {
 
       // LocalStorage'ı hemen güncelleme işlemi
       localStorage.setItem("items", JSON.stringify(updatedMovies));
+      return updatedMovies;
     });
   }
 
