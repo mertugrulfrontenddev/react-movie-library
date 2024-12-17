@@ -1,5 +1,5 @@
 import { CinemaApiContext } from "../context/CinemaContext";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 const AddNewMovie = () => {
   let { movieItems, setMovieItems } = useContext(CinemaApiContext);
@@ -13,6 +13,8 @@ const AddNewMovie = () => {
     poster: "",
     isFavorite: false,
   });
+
+  const fileInput = useRef(null);
 
   useEffect(() => {
     localStorage.setItem("items", JSON.stringify(movieItems));
@@ -29,6 +31,10 @@ const AddNewMovie = () => {
 
     setIsSuccess(true);
 
+    setTimeout(() => {
+      setIsSuccess(false);
+    }, 2500);
+
     setValues({
       id: "",
       title: "",
@@ -38,6 +44,10 @@ const AddNewMovie = () => {
       poster: "",
       isFavorite: false,
     });
+
+    if (fileInput.current) {
+      fileInput.current.value = ""; // Dosya girişi sıfırlandı
+    }
   }
 
   let handleChange = (event) => {
@@ -68,7 +78,9 @@ const AddNewMovie = () => {
             <h3 className="text-center text-secondary">Movie Add Page</h3>
 
             {isSuccess && (
-              <p className="badge bg-warning">Film Başarıyla Eklendi!!!</p>
+              <p className="add-statu badge bg-warning">
+                Film Başarıyla Eklendi!!!
+              </p>
             )}
             <div className="w-100">
               <label
@@ -158,6 +170,7 @@ const AddNewMovie = () => {
                 className="form-control"
                 placeholder="Enter release year"
                 onChange={handleImageChange}
+                ref={fileInput}
               />
             </div>
             <button type="submit" className="btn btn-primary w-100">

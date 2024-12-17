@@ -6,8 +6,6 @@ const DeleteMovie = () => {
   let { movieItems, setMovieItems } = useContext(CinemaApiContext);
   let [hoveredMovieId, setHoveredMovieId] = useState(null);
 
-  movieItems = movieItems || [];
-  // İlk render'da localStorage'dan veri alıyoruz.
   useEffect(() => {
     const savedMovies = JSON.parse(localStorage.getItem("items"));
     if (savedMovies && savedMovies.length > 0) {
