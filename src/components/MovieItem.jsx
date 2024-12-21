@@ -56,9 +56,10 @@ const MovieItem = () => {
                     setFiltered={setFiltered}
                   />
                   <img
-                    className="img-movie w-100 mb-2 shadow"
+                    className="img-movie w-100 mb-2 shadow-lg "
                     src={movie.poster}
                     alt={movie.title}
+                    style={{ borderRadius: "5px" }}
                   />
 
                   <h3 className="shadow-sm p-2 w-100 text-center text-secondary fw-bold">

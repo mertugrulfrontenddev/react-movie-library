@@ -8,6 +8,7 @@ import { Home } from "./components/Home";
 import Movies from "./components/Movies";
 import AddNewMovie from "./components/AddNewMovie";
 import DeleteMovie from "./components/DeleteMovie";
+import UpdateMovie from "./components/UpdateMovie";
 function App() {
   return (
     <BrowserRouter>
@@ -20,6 +21,8 @@ function App() {
 
           <Route path="/movieadd" element={<AddNewMovie />} />
           <Route path="/moviedelete" element={<DeleteMovie />} />
+
+          <Route path="/movieupdate" element={<UpdateMovie />} />
         </Routes>
       </div>
     </BrowserRouter>

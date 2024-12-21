@@ -35,7 +35,7 @@ const SettingsDropdown = () => {
           <li className="nav-item">
             <Link
               className="nav-link text-white"
-              to="/update"
+              to="/movieupdate"
               onClick={handleLinkClick}
             >
               Movie Update

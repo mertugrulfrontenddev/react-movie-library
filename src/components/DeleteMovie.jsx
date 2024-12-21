@@ -50,49 +50,37 @@ const DeleteMovie = () => {
         <div className="card-header">
           <h2 className="text-secondary">Delete Movie Page</h2>
         </div>
-        <div className="d-flex justify-content-between align-items-center bg-primary text-white fw-bold flex-wrap">
-          <p className="text-center  " style={{ flex: "1 1 15%" }}>
-            Num
-          </p>
-          <p className="text-center " style={{ flex: "1 1 15%" }}>
-            Title
-          </p>
-          <p className="text-center  " style={{ flex: "1 1 15%" }}>
-            Genre
-          </p>
-          <p className="text-center " style={{ flex: "1 1 15%" }}>
-            Director
-          </p>
-          <p className="text-center " style={{ flex: "1 1 15%" }}>
-            Year
-          </p>
-          <p className="text-center " style={{ flex: "1 1 15%" }}>
-            Delete
-          </p>
+        <div className=" justify-content-between align-items-center bg-primary text-white fw-bold flex-wrap  d-none d-md-flex">
+          <p className="text-center col-12 col-md-2">Num</p>
+          <p className="text-center col-12 col-md-2">Title</p>
+          <p className="text-center  col-12 col-md-2">Genre</p>
+          <p className="text-center col-12 col-md-2">Director</p>
+          <p className="text-center col-12 col-md-2">Year</p>
+          <p className="text-center col-12 col-md-2">Delete</p>
         </div>
 
         {movieItems.length > 0 ? (
           movieItems.map((movie, index) => (
             <div
-              className="d-flex justify-content-between align-items-start flex-wrap"
+              className="d-flex justify-content-between align-items-start flex-wrap border-bottom"
               key={movie.id}
             >
-              <p className="text-center   " style={{ flex: "1 1 15%" }}>
+              <p className="text-center   text-center col-12 col-md-2">
                 {index + 1}.
               </p>
-              <p className="text-center   " style={{ flex: "1 1 15%" }}>
+              <p className="text-center  text-center col-12 col-md-2 ">
                 {movie.title}
               </p>
-              <p className="text-center  " style={{ flex: "1 1 15%" }}>
+              <p className="text-center  text-center col-12 col-md-2">
                 {movie.genre}
               </p>
-              <p className="text-center  " style={{ flex: "1 1 15%" }}>
+              <p className="text-center  text-center col-12 col-md-2">
                 {movie.director}
               </p>
-              <p className="text-center " style={{ flex: "1 1 15%" }}>
+              <p className="text-center text-center col-12 col-md-2">
                 {movie.year}
               </p>
-              <p className="text-center " style={{ flex: "1 1 15%" }}>
+              <p className="text-center text-center col-12 col-md-2">
                 <img
                   id={movie.id}
                   src={

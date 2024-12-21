@@ -97,6 +97,7 @@ const AddNewMovie = () => {
                 className="form-control"
                 placeholder="Enter movie title"
                 onChange={handleChange}
+                required
               />
             </div>
             <div className="w-100">
@@ -112,6 +113,7 @@ const AddNewMovie = () => {
                 name="genre"
                 value={values.genre}
                 onChange={handleChange}
+                required
               >
                 <option value="">Select Movie Type</option>
                 <option value="Action">Action</option>
@@ -136,6 +138,7 @@ const AddNewMovie = () => {
                 className="form-control"
                 placeholder="Enter director's name"
                 onChange={handleChange}
+                required
               />
             </div>
             <div className="w-100">
@@ -153,6 +156,7 @@ const AddNewMovie = () => {
                 className="form-control"
                 placeholder="Enter release year"
                 onChange={handleChange}
+                required
               />
             </div>
 
@@ -171,6 +175,7 @@ const AddNewMovie = () => {
                 placeholder="Enter release year"
                 onChange={handleImageChange}
                 ref={fileInput}
+                required
               />
             </div>
             <button type="submit" className="btn btn-primary w-100">
